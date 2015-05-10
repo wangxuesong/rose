@@ -13,11 +13,13 @@
     var b = document.body;
     var c = document.getElementsByTagName('canvas')[0];
     var a = c.getContext('2d');
-    document.body.clientWidth;
+    var w = 500
+    if (document.body.clientWidth < w)
+        w = document.body.clientWidth;
     with (m = Math)
         C = cos, S = sin, P = pow, R = random;
-    c.width = c.height = f = 500;
-    h = -250;
+    c.width = c.height = f = w;
+    h = -w/2;
     function p(a, b, c) {
         if (c > 60)
             return [ S(a * 7) * (13 + 5 / (.2 + P(b * 4, 4))) - S(b) * 50,
